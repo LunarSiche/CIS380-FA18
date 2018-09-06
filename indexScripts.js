@@ -16,10 +16,7 @@ function date(){
 
 	today = mm + '/' + dd + '/' + yyyy;
 	response.innerHTML = today;
-
-	alert(response.innerHTML)
 }
-
 
 var x = document.getElementById("demo");
 
@@ -37,8 +34,6 @@ function showPosition(position) {
     +latlon+"&zoom=14&size=400x300&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
     document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
 }
-//To use this code on your website, get a free API key from Google.
-//Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
 
 function showError(error) {
     switch(error.code) {
@@ -56,3 +51,11 @@ function showError(error) {
             break;
     }
 }
+
+
+// Warning before leaving the page (back button, or outgoinglink)
+window.onbeforeunload = function() {
+   return "Do you really want to leave our brilliant application?";
+   //if we return nothing here (just calling return;) then there will be no pop-up question at all
+   //return;
+};
