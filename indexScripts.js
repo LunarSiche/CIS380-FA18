@@ -28,6 +28,13 @@ function getLocation() {
     } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
+
+        alert("Browser does not support/denied geolocation");
+
+}
+
+function myFunction() {
+    alert("I am an alert box!");
 }
 
 function showPosition(position) {
@@ -52,9 +59,32 @@ function showError(error) {
     }
 }
 
+var buton=document.getElementById("buton");
+var allchar="0123456789ABCDEF";
+
+buton.addEventListener("click",myFun);
+
+function myFun(){
+  var  randcol= "";
+for(var i=0; i<6; i++){
+   randcol += allchar[Math.floor(Math.random()*16)];
+}
+document.body.style.backgroundColor= "#"+randcol;
+}
+document.getElementById("demo").innerHTML =
+"The full URL of this page is:<br>" + window.location.href;
+
 // Warning before leaving the page (back button, or outgoinglink)
 window.onbeforeunload = function() {
    return "Do you really want to leave our brilliant application?";
    //if we return nothing here (just calling return;) then there will be no pop-up question at all
    //return;
 };
+
+function chBackcolor(color) {
+   document.body.style.background = color;
+}
+
+function myFunction() {
+    alert("I am an alert box!");
+}
