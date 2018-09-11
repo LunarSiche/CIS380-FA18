@@ -20,19 +20,19 @@ function date(){
 
 var x = document.getElementById("demo");
 
+var x = document.getElementById("demo");
+
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
+        navigator.geolocation.getCurrentPosition(showPosition);
     } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
 
 function showPosition(position) {
-    var latlon = position.coords.latitude + "," + position.coords.longitude;
-    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
-    +latlon+"&zoom=14&size=400x300&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
-    document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
 }
 
 function showError(error) {
@@ -51,7 +51,6 @@ function showError(error) {
             break;
     }
 }
-
 
 // Warning before leaving the page (back button, or outgoinglink)
 window.onbeforeunload = function() {
